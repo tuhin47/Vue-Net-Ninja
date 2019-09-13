@@ -3,7 +3,8 @@ new Vue({
     data: {
         name: 'Tuhin',
         job: 'Engineer',
-        website:'http://google.com'
+        website:'http://google.com',
+        websiteTag:'<a href="http://google.com"> GOOGLE Website</a>'
     },
     methods: {
         greet:function (time) {
