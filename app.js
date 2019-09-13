@@ -2,7 +2,8 @@ new Vue({
     el: '#vue-app',
     data: {
         name: 'Tuhin',
-        job: 'Engineer'
+        job: 'Engineer',
+        website:'http://google.com'
     },
     methods: {
         greet:function (time) {
