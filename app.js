@@ -1,14 +1,22 @@
 new Vue({
     el: '#vue-app',
     data: {
-        name: 'Tuhin',
-        job: 'Engineer',
-        website:'http://google.com',
-        websiteTag:'<a href="http://google.com"> GOOGLE Website</a>'
+        age:25,
+        x:0,
+        y:0
     },
     methods: {
-        greet:function (time) {
-            return 'Good '+time+' '+this.name;
-        }
+       add:function (inc) {
+           this.age+=inc;
+       },
+       sub:function(dec){
+           this.age-=dec;
+       },
+       updateXY:function(event){
+            // console.log(event);
+            this.x=event.offsetX;
+            this.y=event.offsetY;
+
+       }
     }
 });

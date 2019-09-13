@@ -10,11 +10,14 @@
 
 <body>
     <div id="vue-app">
-        <h1>{{greet('day')}}</h1>
-        <p>Hey, {{ name }}</p>
-        <p><a v-bind:href="website"> GOOGLE Website</a></p>
-        <input type="text" v-bind:value="name">
-        <p v-html='websiteTag'></p>
+        <h1>Eventes</h1>
+        <p>Age:{{age}}</p>
+        <button v-on:click='add(1)'>Add</button>
+        <button v-on:click='sub(1)'>subtract</button>
+        <button v-on:dblclick='add(10)'>DAdd</button>
+        <button v-on:dblclick='sub(10)'>Dsubtract</button>
+
+        <div id='canvas' v-on:mousemove='updateXY'>{{x}},{{y}}</div>
     </div>
 </body>
 
