@@ -13,6 +13,8 @@
         <h1>{{greet('day')}}</h1>
         <p>Hey, {{ name }}</p>
         <p><a v-bind:href="website"> GOOGLE Website</a></p>
+        <input type="text" v-bind:value="name">
+        <p v-html='websiteTag'></p>
     </div>
 </body>
 
