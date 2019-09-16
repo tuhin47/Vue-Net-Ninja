@@ -1,1 +1,15 @@
-<!-- #14 - Multiple Vue Instances -->
+<!-- #15 - Intro to Components -->
+
+Vue.component('greeting', {
+    template: "<p>{{name}}<button v-on:click='changeName'>change</button></p>",
+    data:function () {
+        return {
+            name:'Tuhin'
+        }
+    },
+    methods:{
+        changeName:function () {
+            this.name='Towhid';
+        }
+    }
+});
