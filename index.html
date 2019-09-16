@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
+    <head>
+        <meta charset="utf-8">
+        <title>VueJS</title>
+        <link href="styles.css" rel="stylesheet" />
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <h1>Templates</h1>
+        <div id="vue-app-one">
+            <h1>Vue App One</h1>
+            <greeting></greeting>
+        </div>
+        <div id="vue-app-two">
+            <h1>Vue App Two</h1>
+            <greeting></greeting>
+        </div>
+        <!--<div class="test"></div>
+        <div class="test"></div> -->
+    </body>
 
-<head>
-    <meta charset="utf-8">
-    <title>14</title>
-    <link href="styles.css" rel="stylesheet" />
-    <script src="https://unpkg.com/vue"></script>
-</head>
-
-<body>
-    <div id="vue-app-one">
-        <h2>{{title}}</h2>
-        <p>{{greet}}</p>
-    </div>
-
-    <div id="vue-app-two">
-        <h2>{{title}}</h2>
-        <p>{{greet}}</p>
-        <button v-on:click='changeOther'>Change</button>
-    </div>
-</body>
-
-<script src="app.js"></script>
-
+    <script src="app.js"></script>
 </html>

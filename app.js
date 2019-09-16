@@ -1,36 +1,26 @@
-var one=new Vue({
-    el: '#vue-app-one',
-    data: {
-        title:'one',
-    },
-    methods: {
-       
-    },
-    computed: {
-
-        greet:function(){
-            return 'from one';
+Vue.component('greeting', {
+    template: "<p>{{name}}<button v-on:click='changeName'>change</button></p>",
+    data:function () {
+        return {
+            name:'Tuhin'
         }
-
+    },
+    methods:{
+        changeName:function () {
+            this.name='Towhid';
+        }
     }
 });
 
+/* new Vue({
+    el: '.test',
+    template: '<p>I am a template</p>'
+}); */
 
-var two=new Vue({
-    el: '#vue-app-two',
-    data: {
-        title:'two',
-        
-    },
-    methods: {
-        changeOther:function(){
-            one.title='From 2';
-        }
-    },
-    computed: {
-        greet:function(){
-            return 'from two';
-        }
+new Vue({
+    el: '#vue-app-one'
+});
 
-    }
+new Vue({
+    el: '#vue-app-two'
 });
