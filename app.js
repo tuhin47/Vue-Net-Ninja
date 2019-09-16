@@ -1,26 +1,12 @@
-Vue.component('greeting', {
-    template: "<p>{{name}}<button v-on:click='changeName'>change</button></p>",
-    data:function () {
-        return {
-            name:'Tuhin'
-        }
+new Vue({
+    el: '#vue-app-one',
+    data: {
+        output: 'Your favourite food'
     },
-    methods:{
-        changeName:function () {
-            this.name='Towhid';
+    methods: {
+        readRefs: function(){
+            console.log(this.$refs);
+            this.output = this.$refs.input.value;
         }
     }
-});
-
-/* new Vue({
-    el: '.test',
-    template: '<p>I am a template</p>'
-}); */
-
-new Vue({
-    el: '#vue-app-one'
-});
-
-new Vue({
-    el: '#vue-app-two'
 });
