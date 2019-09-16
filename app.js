@@ -1,22 +1,36 @@
-new Vue({
-    el: '#vue-app',
+var one=new Vue({
+    el: '#vue-app-one',
     data: {
-        health: 100,
-        ended: false
+        title:'one',
     },
     methods: {
-        punch: function () {
-            this.health -= 10;
-            if (this.health <= 0) {
-                this.ended = true;
-            }
-        },
-        restart: function () {
-            this.health = 100;
-            this.ended = false;
+       
+    },
+    computed: {
+
+        greet:function(){
+            return 'from one';
+        }
+
+    }
+});
+
+
+var two=new Vue({
+    el: '#vue-app-two',
+    data: {
+        title:'two',
+        
+    },
+    methods: {
+        changeOther:function(){
+            one.title='From 2';
         }
     },
     computed: {
+        greet:function(){
+            return 'from two';
+        }
 
     }
 });

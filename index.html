@@ -1,28 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>GAME</title>
-        <link href="styles.css" rel="stylesheet" />
-        <script src="https://unpkg.com/vue"></script>
-    </head>
-    <body>
-        <div id="vue-app">
-            <!-- bag image -->
-            <div id="bag" v-bind:class="{ burst: ended }"></div>
 
-            <!-- bag health bar -->
-            <div id="bag-health">
-                <div v-bind:style="{ width: health + '%' }"></div>
-            </div>
+<head>
+    <meta charset="utf-8">
+    <title>14</title>
+    <link href="styles.css" rel="stylesheet" />
+    <script src="https://unpkg.com/vue"></script>
+</head>
 
-            <!-- game control buttons -->
-            <div id="controls">
-                <button v-on:click="punch" v-show="!ended">Punch</button>
-                <button v-on:click="restart">Restart</button>
-            </div>
-        </div>
-    </body>
+<body>
+    <div id="vue-app-one">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+    </div>
 
-    <script src="app.js"></script>
+    <div id="vue-app-two">
+        <h2>{{title}}</h2>
+        <p>{{greet}}</p>
+        <button v-on:click='changeOther'>Change</button>
+    </div>
+</body>
+
+<script src="app.js"></script>
+
 </html>
