@@ -1,5 +1,7 @@
-<!-- once -->
-<button v-on:click.once='add(1)'>Add</button>
+Key modifiers
 
-<!-- prevent -->
-<a v-on:click.prevent='click' href="http://facebook.com">facebook</a>
+<!-- keyup.enter -->
+<input type="text" v-on:keyup.enter='logName'>
+
+<!-- keyup.alt.enter -->
+<input type="text" v-on:keyup.alt.enter='logAge'>
