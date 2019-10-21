@@ -1,0 +1,54 @@
+<script src="https://unpkg.com/vue"></script>
+<script src="https://unpkg.com/vue-multiselect@2.1.0"></script>
+<link rel="stylesheet" href="https://unpkg.com/vue-multiselect@2.1.0/dist/vue-multiselect.min.css">
+
+<div id="vue-app">
+
+    <btcl-input title="Bandwidth (Mbps)" :text.sync="bandwidth" placeholder="Enter Bandwidth (Mbps)" :required=true
+    :number=true ></btcl-input>
+    
+</div>
+<script >
+Vue.component('btcl-input', {
+    template: `
+		<div class="form-group">
+			<div class=row>
+				<label class="col-sm-4 control-label">{{title}}<span v-if=required class=required aria-required=true>*</span></label>
+				<div class=col-sm-6>
+					<input v-if="readonly" type=text class="form-control" v-model="textValue" readonly/>
+					
+					<input v-else-if="number&&placeholder" type=number class="form-control" v-model.number="textValue" v-bind:placeholder="placeholder"/>
+					<input v-else-if="number" type=number class="form-control" v-model.number="textValue"/>
+					<input v-else-if="placeholder" type=text class="form-control" v-model="textValue" v-bind:placeholder="placeholder"/>
+					<input v-else type=text class="form-control" v-model="textValue"/>
+				</div>
+			</div>
+		</div>
+	`,      
+        props: ['title', 'required', 'vertical', 'readonly', 'textarea', 'text', 'number', 'radio', 'radioList',
+            'radioName', 'placeholder'
+        ],
+        computed: {
+            textValue: {
+                get() {
+                    return this.text;
+                },
+                set(val) {
+                    this.$emit('update:text', val);
+                }
+            }
+        },
+        mounted: function () {
+            // debugger;
+        }
+    });
+
+
+new Vue({
+    el: '#vue-app',
+    data: {
+        bandwidth:5,
+    }
+});
+</script>
+
